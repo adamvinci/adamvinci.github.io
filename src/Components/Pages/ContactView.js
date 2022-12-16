@@ -7,12 +7,12 @@ import { getAuthenticatedUser } from "../../utils/auths";
 const contactPage = async () => {
 
     const main = document.querySelector('main');
-    if(!getAuthenticatedUser()){
-        main.innerHTML=`<center><p style="font-family: 'Games', sans-serif; color: red">Not connected</p></center>`
-    }else{
-    const mesage = await getMessage();
-    const page = pageHtml(mesage);
-    main.innerHTML = page;
+    if (!getAuthenticatedUser()) {
+        main.innerHTML = `<center><p style="font-family: 'Games', sans-serif; color: red">Not connected</p></center>`
+    } else {
+        const mesage = await getMessage();
+        const page = pageHtml(mesage);
+        main.innerHTML = page;
     }
     document.querySelector('#changePage').addEventListener('click', () => {
         Navigate('/contact');
@@ -56,7 +56,7 @@ const contactPage = async () => {
             const response = await fetch(`${process.env.API_BASE_URL}/message/${elementId}`, options);
 
             if (!response.ok) Swal.fire({
-                title: 'Le type doit etre  une "question"  "suggestion" ou "Supprimer mon compte" ',
+                title: 'Le type doit etre  une "question", "suggestion" ou "suppresion" ',
                 position: 'top',
             })
             Navigate('/contactView')
@@ -72,8 +72,8 @@ function pageHtml(mesage) {
     <button style="font-family: 'Games', sans-serif;" type="button" id="changePage"  >Add Message</button >
      <p style="font-family: 'Games', sans-serif"> View Message</p>
     </div>`
-        Array.from(mesage.message).forEach(element => {
-            contactpage += `
+    Array.from(mesage.message).forEach(element => {
+        contactpage += `
         <div id="message2"> 
         <div id="container2">
         <div style="font-family: 'Games', sans-serif;" id="type2" data-element-id="${element.type}" contenteditable='true'> ${element.type}</div> 
@@ -83,18 +83,18 @@ function pageHtml(mesage) {
         </div>
         </div>
            `;
-        });
+    });
     return contactpage;
 }
 
 async function getMessage() {
     const options = {
-        method:"GET",
-        headers:{
+        method: "GET",
+        headers: {
             Authorization: getAuthenticatedUser()?.token,
         }
     }
-    const response = await fetch(`${process.env.API_BASE_URL}/message`,options)
+    const response = await fetch(`${process.env.API_BASE_URL}/message`, options)
 
     if (!response.ok) {
         throw new Error(`readAllMovies:: fetch error : ${response.status} : ${response.statusText}`);

@@ -92,7 +92,7 @@ const HomePage = () => {
         e.preventDefault();
         const x = document.getElementById("checkBox");
         if (x.checked === false) {
-            Swal.fire('Please accept the terms & condition')
+            Swal.fire('Please accept the terms and conditions')
         } else {
 
 

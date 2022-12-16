@@ -47,12 +47,12 @@ function text() {
 
 async function getMystats() {
   const options = {
-    method:"get",
-    headers:{
-        Authorization: getAuthenticatedUser().token,
+    method: "get",
+    headers: {
+      Authorization: getAuthenticatedUser().token,
     }
-}
-  const response = await fetch(`${process.env.API_BASE_URL}/point`,options);
+  }
+  const response = await fetch(`${process.env.API_BASE_URL}/point`, options);
 
   if (!response.ok) {
     throw new Error("fetch error : ");

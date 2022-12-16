@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "myJScourse's modern frontend boilerplate to build a phaser game",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "webpack --mode development --config webpack.config.base.js",
     "build": "webpack --mode production --config webpack.config.prod.js",
     "start": "webpack serve --mode development --config webpack.config.base.js"
@@ -31,6 +33,7 @@
     "animejs": "^3.2.1",
     "bootstrap": "^5.0.1",
     "clean-webpack-plugin": "^4.0.0",
+    "gh-pages": "^4.0.0",
     "phaser": "^3.55.2",
     "sweetalert2": "^11.6.15",
     "terser-webpack-plugin": "^5.3.6",
