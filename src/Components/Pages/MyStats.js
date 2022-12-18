@@ -10,8 +10,9 @@ let userName;
 const mystats = `
 
   <div id="mystats">
+  <div class = "userName">
     <p class = "userName"> ${userName}</p>
-
+</div>
 
     <div class="game-played">
 

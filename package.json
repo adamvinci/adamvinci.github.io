@@ -4,9 +4,9 @@
   "description": "myJScourse's modern frontend boilerplate to build a phaser game",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist -b 5",
     "dev": "webpack --mode development --config webpack.config.base.js",
-    "build": "webpack --mode production --config webpack.config.prod.js && cp dist/index.html dist/404.html",
+    "build": "webpack --mode production --config webpack.config.prod.js ",
     "start": "webpack serve --mode development --config webpack.config.base.js"
   },
   "author": "groupe-9",
