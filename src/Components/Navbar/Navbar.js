@@ -9,7 +9,7 @@ const Navbar = () => {
   if ((window.location.pathname === '/' || window.location.pathname === '/logout') && !getAnonymUser()) {
     navbar += `
   <h1>
-  Play with the  <span style="color:#FFFF8F"> belgium team for  </span> <span style="color:#C41E3A">one last game  </span>
+  Play with the  <span style="color:#FFFF8F"> belgian team for  </span> <span style="color:#C41E3A">one last game  </span>
  </h1>
   `;
   } else {

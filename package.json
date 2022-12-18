@@ -6,7 +6,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "webpack --mode development --config webpack.config.base.js",
-    "build": "webpack --mode production --config webpack.config.prod.js",
+    "build": "webpack --mode production --config webpack.config.prod.js && cp dist/index.html dist/404.html",
     "start": "webpack serve --mode development --config webpack.config.base.js"
   },
   "author": "groupe-9",

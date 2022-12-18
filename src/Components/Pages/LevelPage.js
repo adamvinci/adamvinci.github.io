@@ -59,7 +59,7 @@ const LevelPage = () => {
 
 
     const btnEasy1 = document.createElement('button');
-    btnEasy1.innerHTML = "Easy (4s to memorize cart)";
+    btnEasy1.innerHTML = "Easy";
     btnEasy1.className = 'levelEasy';
     btnEasy1.addEventListener('click', (e) => {
         const difficulte = e.target.innerHTML
@@ -67,7 +67,7 @@ const LevelPage = () => {
     });
 
     const btnMedium1 = document.createElement('button');
-    btnMedium1.innerHTML = "Medium  (2s to memorize cart)";
+    btnMedium1.innerHTML = "Medium";
     btnMedium1.className = 'levelMedium';
     btnMedium1.addEventListener('click', (e) => {
         const difficulte = e.target.innerHTML
@@ -75,7 +75,7 @@ const LevelPage = () => {
     });
 
     const btnHard1 = document.createElement('button');
-    btnHard1.innerHTML = "Hard  (0.7s to memorize cart)";
+    btnHard1.innerHTML = "Hard";
     btnHard1.className = 'levelHard';
     btnHard1.addEventListener('click', (e) => {
         const difficulte = e.target.innerHTML
